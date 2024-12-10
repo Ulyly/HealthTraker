@@ -1,0 +1,774 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+html, body {
+    width: 100%;
+    height: 688.07vh;
+    margin: 0;
+    /* overflow-x: hidden; */
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+body {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.wrapper {
+    width: 69.3%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+}
+.body-container{
+    width: 100%;
+    height: 100%;
+}
+.header{
+    width: 100%;
+    height: 1.55%;
+
+    color:black;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+    z-index: 2; 
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.83vw;
+    height: 10%;
+    color:#000000;
+}
+
+.link_info a {
+    color:black;
+    text-decoration: none;
+    margin: 0 50px 0 50px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.83vw;
+
+}
+.link_info a {
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Анимация подчеркивания при наведении */
+.link_info a::after {
+    content: ''; /* Псевдоэлемент для создания подчеркивания */
+    position: absolute; /* Позиционируем его относительно ссылки */
+    left: 0; /* Начальная позиция слева */
+    bottom: -2px; /* Располагаем подчеркивание немного ниже текста */
+    width: 0; /* Начальная ширина 0 */
+    height: 2px; /* Толщина подчеркивания */
+    background-color: #000; /* Цвет подчеркивания */
+    transition: width 0.3s ease; /* Плавное изменение ширины */
+}
+
+/* Эффект при наведении на ссылку */
+.link_info a:hover::after {
+    width: 100%; /* При наведении ширина подчеркивания становится 100% */
+}
+
+.desktop-link {
+    color: black;
+    text-decoration: none;
+    margin: 0 50px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.83vw;
+    transition: color 0.3s ease;
+}
+
+.desktop-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.desktop-link:hover::after {
+    width: 100%;
+}
+
+.burger-menu {
+    display: none;
+    width: 30px; /* Укажите нужный размер изображения бургера */
+    height: auto;
+}
+.container_one{
+    width: 100%;
+    height: 16.7%;
+    border-bottom: 1px solid black; /* Тонкая черная линия */
+}
+.wrapper_title{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+
+}
+.title_prod{
+    width: 60%;
+    height: 100%;
+    /* position: absolute; */
+    z-index: 1;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 65px 53px 0px 0px; */
+}
+.title_prod p{
+    width: 70%;
+}
+.great_photo {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.great_photo img{
+    width: 39%;
+    overflow: hidden;
+    position: relative;
+}
+.container_two{
+    width: 100%;
+    height: 16.7%;
+    border-bottom: 1px solid black; /* Тонкая черная линия */
+}
+.wrapper_cont_two{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.wrapper_description{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+.photo_tracker{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.photo_tracker img{
+    width: 21%;
+    overflow: hidden;
+    position: relative;
+}
+
+.product_description{
+    width: 80%;
+    height: 73%;
+    font-size: 1.56vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color:black;
+    text-align: justify;   
+    text-decoration-thickness: 1px; /* Толщина линии подчеркивания */
+    display: flex;
+    flex-direction: column;
+}
+.product_description p{
+    text-decoration: underline;
+}
+.product_description span{
+    font-weight: 500;
+}
+.product_description p::before {
+    content: "• "; /* Символ точки */
+    display: inline-block;
+    margin-right: 5px; /* Расстояние между точкой и текстом */   
+}
+.container_four, .container_three, .container_five{
+    width: 100%;
+    height: 16.7%;
+    border-bottom: 1px solid black; /* Тонкая черная линия */
+}
+.wrapper_text_digrams{
+    width: 100%;
+    height: 100%;
+}
+.wrapper_diagrams{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.wrapper_text_diagrams{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text_diagrams{
+    width: 85%;
+    height: 100%;
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.835vw;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.img_diagrams{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 45%;
+}
+.img_diagrams img{
+    width: 45%;
+    overflow: hidden;
+    position: relative;
+}
+.wrapper_box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.box{
+    width: 80%;
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+.box p{
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    height: 100%;
+    color:#000000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.27vw;
+    text-align: justify;
+}
+.box_img{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img1{
+    width: 29%;
+    overflow: hidden;
+    position: relative;
+}
+.img2{
+    width: 78%;
+    overflow: hidden;
+    position: relative;
+}
+.img3{
+    width: 77%;
+    overflow: hidden;
+    position: relative;
+}
+.img4{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.container_six{
+    width: 100%;
+    height: 16.7%;
+    display: flex;
+    justify-content: center;
+}
+.wr_cn_s{
+    width: 85%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.wr_photo{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wr_photo img{
+    width: 90%;
+}
+.logo1{
+    display: flex;
+    align-items: center;
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.83vw;
+    height: 10%;
+    color: #000000;
+}
+.wrapper_footer{
+    width: 84.3%;
+    height: 12.92%;
+}
+.footer {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 0.83vw;
+    font-weight: 500;
+    font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    /* letter-spacing: 1px;
+    word-spacing: 2px; */
+
+}
+.footer_title_category{
+    font-size: 1vw;
+    font-weight: 500;
+    color:rgba(0, 0, 0, 0.30);
+    margin-bottom: 5%
+}
+.wrapper_elem_footer{
+    width: 85%;
+    height: 100%;
+    color:rgba(0, 0, 0);
+}
+.elem_footer{
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.email_adres{
+    width: 100%;
+    height: 35%;
+}
+.connection{
+    width: 100%;
+    height: 33%;
+    display:flex;
+    flex-direction: column;
+}
+.connection a{
+    color: inherit; 
+    text-decoration: none; 
+}
+.connection span{
+    color: rgba(0, 0, 0, 0.30)
+}
+.social_media{
+    width: 100%;
+    height: 25%;
+}
+.soc_title{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.vk {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.inst {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.vk a, .inst a{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    color: inherit; /* Сбрасывает цвет ссылки на цвет родительского элемента */
+    text-decoration: none; /* Убирает подчеркивание */
+}
+.vk img, .inst img{
+    width: 11.7%;
+}
+.img_partner{
+    width: 15%;
+    height: 100%;
+}
+.img_partner img{
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+}
+.contact_us{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 100%;
+    border-left: 1px solid black;
+}
+.partners{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 49.5%;
+    height: 100%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.wrapper_part{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.partner1, .partner2, .partner3, .partner4{
+    display:flex;
+    justify-content: space-around;
+}
+.text_part{
+    width: 60%;
+    height: 100%;
+}
+.name{
+    color:#000000;
+    font-size: 1.04vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.name a{
+    /* color:#000000;
+    font-size: 1.04vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: normal; */
+    color: inherit; /* Сбрасывает цвет ссылки на цвет родительского элемента */
+    text-decoration: none; /* Убирает подчеркивание */
+}
+.description p{
+    width: 100%;
+    text-align: justify;
+    font-weight: 400;
+    /* font-size: 100%; */
+}
+.about_team{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25.5%;
+    height: 100%;
+    border-right: 1px solid black;
+}
+.team_category{
+    display: flex;
+    flex-direction: column;
+}
+
+.team_category a{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: inherit; /* Сбрасывает цвет ссылки на цвет родительского элемента */
+    text-decoration: none; /* Убирает подчеркивание */
+    font-weight: 700;
+    font-size: 1.05vw;
+}
+.wrapper_elem_footer3 {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.wrapper_category_fond{
+    width: 100%;
+    height: 40%;
+}
+.footer_title_category p{
+    font-size: 1.37vw;
+    font-weight: 500;
+    font-style: normal;
+    font-family: "Montserrat", sans-serif;
+}
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 688.07vh;
+    z-index: -1;
+    overflow: hidden; /* Скрыть содержимое, выходящее за границы */
+}
+
+.rectangle {
+    position: absolute;
+    transform-origin: center;
+}
+@media screen and (max-width: 430px) {
+    html{
+        width: 100%;
+        height: 776%;
+    }
+    .wrapper {
+        width: 100%;
+    }
+    .desktop-link {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+    .header{
+        padding: 0px 7vw;
+    }
+    .logo{
+        font-size: 3.8vw;
+    }
+    .wrapper_title{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .title_prod{
+        width: 100%;
+        height: 30%;
+    }
+    .great_photo {
+        width: 100%;
+        height: 60%;
+    }
+    .title_prod p{
+        font-size: 5vw;
+    }
+    .product_description{
+        font-size: 2.34vh;
+    }
+    .text_diagrams{
+        font-size: 2vw;
+    }
+    .img_diagrams{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 57%;
+    }
+    .img_diagrams img{
+        width: 80%;
+    }
+    .box{
+        height: 20%;
+        display: flex;
+        align-items: center;
+    }
+    .box p{
+        height: 80%;
+        font-size: 2.4vw;
+    }
+    .wr_cn_s{
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .wr_photo{
+        width: 60%;
+    }
+    .wrapper_footer{
+        width: 100%;
+    }
+    .logo1{
+        padding: 0px 7vw;
+        font-size: 3.7vw;
+        border-bottom: 1px solid black; /* Тонкая черная линия */
+        border-top: 1px solid black; /* Тонкая черная линия */
+    }
+    .wrapper_footer{
+        height: 13.85%;
+        background-color: #3CB5A2;
+    }
+    .footer{
+        height: 160%;
+        flex-direction: column;
+    }
+    .footer_title_category{
+        height: 25%;
+        justify-content: space-evenly;
+    }
+    .footer_title_category p{
+        font-size: 4.65vw
+    }
+    .contact_us{
+        border-left: none; /* Тонкая черная линия */
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .wrapper_elem_footer{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .elem_footer{
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-bottom: 1px solid black; /* Тонкая черная линия */
+
+    }
+    .elem_footer a{
+        font-size: 3.74vw;
+    }
+
+    .elem_footer span{
+        font-size: 3.25vw;
+    }
+    .email_adres{
+        height: 60%;
+    }
+    .connection{
+        height: 50%;
+    }
+    .partners{
+        width: 100%;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid black; /* Тонкая черная линия */
+    }
+    .footer_title_category{
+        display: flex;
+        align-items: end;
+        height: 10%;
+        margin: 0;
+    }
+    .team_category a{
+        font-size: 3.4vw;
+    }
+    .wrapper_part{
+        justify-content: space-evenly;
+    }
+    .name p, .name a{
+        font-size: 2.5vw;
+    }
+    .description p{
+        font-size: 2vw;
+    }
+    .about_team{
+        width: 100%;
+        height: 60%;
+        border-right: none;
+    }
+    .about_company{
+        width: 100%;
+        height: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .footer_title_category {
+        height: 3vh;
+    }
+    .wrapper_category_fond{
+        height:55%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .img_fond img{
+
+        width: 80%;
+        overflow: hidden;
+        position: relative;
+    } 
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 776%;
+        z-index: -1;
+        overflow: hidden; /* Скрыть содержимое, выходящее за границы */
+    }
+}
+/* @media screen and (max-width: 320px) {
+    .background {
+        width: 100%;
+    }
+
+    .wrapper {
+        width: 100%;
+    }
+
+    .desktop-link {
+        font-size: 3vw;
+    }
+
+    .link_info a{
+        font-size: 3vw;
+    }
+
+
+} */
